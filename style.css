@@ -1,0 +1,144 @@
+
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: "Inter";
+  color: #FCF2FC;
+}
+body{
+  margin: 4rem;
+  align-items: center;
+  background: linear-gradient(194deg, #6F97FF 15.32%, #83B4FF 49.44%, rgba(173, 240, 255, 0.90) 100%);
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+
+main{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.header{
+  width:100%
+}
+
+.header h1{
+  font-size: 80px;
+  font-weight: 600;
+  letter-spacing: -6px;
+  font-family: "Poppins";
+  text-align: center;
+  /* padding-bottom: 13px; */
+  
+}
+.header p{
+  margin-top: -26px;
+  margin-bottom: 33px;
+}
+
+.header div input{
+  width: 100%;
+  display: inline-flex;
+  text-align: center;
+  margin-top: 16px;
+  padding: 16px 20px;
+  gap: 10px;
+  color: #74ABFF;
+  background: rgba(255, 255, 255, 0.90);
+  box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.09);
+  border: none; border-radius: 50px;
+  outline: none;
+}
+.header input:focus::placeholder{
+  color: transparent
+}
+
+.box_bg{
+  width: 100%;
+  padding: 46px 32px;
+  border-radius: 30px;
+  margin-top: 49px;
+  background: linear-gradient(41deg, #6CD8FA 13.8%, #5498FF 49.45%, #83CBFF 111.17%);
+  box-shadow: 0px 60px 43px -74px rgba(0, 0, 0, 0.25), 0px 4px 17px 0px rgba(0, 0, 0, 0.25);
+}
+
+
+/*  */
+/*  */
+/*  */
+.boxInside_topInfos{
+  margin-bottom: 63px;
+}
+.boxInside_topInfos .cidade{
+  font-family: "Kanit";
+  font-size: 49px;
+  font-style: normal;
+  font-weight: 600;
+  margin-bottom: -3px;
+  margin-top: -6px;
+}
+.boxInside_topInfos .data{
+  font-size: 19px;
+}
+/*  */
+/*  */
+/*  */
+.boxInside_middleInfos{
+  display: flex;
+  justify-content: center;
+  gap: 33px;
+  padding: 10px;
+  font-size: 19px;
+  margin-bottom: 33px;
+}
+.boxInside_middleInfos p{
+  display: flex;
+  align-items: center;
+}
+.boxInside_middleInfos img{ padding-right: 16px; }
+/*  */
+/*  */
+/*  */
+.boxInside_bottomInfos{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.boxInside_bottomInfos .icon{
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+  gap: 23px;
+}
+
+.boxInside_bottomInfos .icon img{
+  margin-bottom: 6px;
+}
+
+.boxInside_bottomInfos .temperatura h3{
+  font-family: "Kanit";
+  font-size: 99px;
+  font-weight: 400;
+  margin-bottom: -9px;
+}
+
+.boxInside_bottomInfos .temperatura div{
+  display: flex;
+  justify-content: flex-end;
+  gap: 29px;
+}
+
+.boxInside_bottomInfos .temperatura div p{
+  font-weight: 600;
+  font-size: 19px;
+}
+.boxInside_bottomInfos .temperatura div span{ font-weight: normal; }
