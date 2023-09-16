@@ -1,14 +1,15 @@
-A WHEATER APP
+# Wheater App
 
-Where you can type some city name and it'll show the weather conditions of the determinate city;
+Welcome to the Weather App, where you can search for a city and instantly access it's current weather conditions. 
 
-> What infos is showed:
+This app provides the following information:
+
 - City Name;
 - Current day and time;
-- Rainy, Humidity and Wind infos;
-- Icon indicating the weather situation;
-- Current weather temperature in ºcelsius;
-- Min. and Máx. ºcelsius;
+- Rainfall, Humidity, and Wind Details;
+- Weather Icon to indicate current conditions;
+- Current temperature in ºcelsius;
+- Minimum and Maximum temperatures in ºcelsius
 
 
 
