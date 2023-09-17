@@ -7,18 +7,6 @@ const boxStats = document.querySelector(".box_bg");
 const nothingFound = document.querySelector(".noResults");
 
 
-const cidade = document.querySelector("[data-stats='cidade']");
-const data = document.querySelector("[data-stats='data']");
-
-const chuva = document.querySelector("[data-stats='chuva']");
-const humidade = document.querySelector("[data-stats='humidade']");
-const vento = document.querySelector("[data-stats='vento']");
-
-const temp = document.querySelector("[data-stats='temperatura']");
-const temp_max = document.querySelector("[data-stats='temperatura_Max']");
-const temp_min = document.querySelector("[data-stats='temperatura_Min']");
-
-
 function dataAtual(timestamp){
     function _dia(){
         const dia = new Date().getDay();
