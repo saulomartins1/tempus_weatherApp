@@ -74,17 +74,40 @@ async function weatherNow(cityName){
         const dataTime = dataAtual(objW.data)._horario();
         // //
 
-        cidade.innerHTML = `${objW.cidade}`;
-        data.innerHTML = `${dataDay} às ${dataTime}`
+        const contentBoxInside = 
+        `
+        <div class="boxInside_topInfos">
+            <p>Tempo em</p>
+            <h2 class="cidade" data-stats="cidade">${objW.cidade}</h2>
+            <p class="data" data-stats="data">${dataDay} às ${dataTime}</p>
+        </div>
+        <div class="boxInside_middleInfos">
+            <p class="chuva">
+                <img src="source/images/icons/icon_chuva.svg" alt="probabilidade de chuva"> 
+                <span data-stats="chuva">${objW.vento.toFixed(0)}%</span></p>
+            <p class="humidade">
+                <img src="source/images/icons/icon_humidade.svg" alt="humidade atual">
+                <span data-stats="humidade">${objW.humidade}%</span></p>
+            <p class="vento">
+                <img src="source/images/icons/icon_vento.svg" alt="velocidade do vento">
+                <span data-stats="vento">${objW.vento.toFixed(0)} km/h</span></p>
+        </div>
+        <div class="boxInside_bottomInfos">
+            <div class="icon">
+                <img data-stats="icon" src="source/images/icons/ensolarado.svg" alt="Tempo ensolarado">
+                <p data-stats="icon_text">Indefinido</p>
+            </div>
+            <div class="temperatura">
+                <h3 data-stats="temperatura">${+objW.temp.toFixed(0)} ºc</h3>
+                <div>
+                    <p>Máx.: <span data-stats="temperatura_Max">${+objW.temp_max.toFixed(0)} ºc</span></p>
+                    <p>Min.: <span data-stats="temperatura_Min">${+objW.temp_min.toFixed(0)} ºc</span></p>
+                </div>
+            </span>
+        </div>        
+        `
+        boxStats.innerHTML = contentBoxInside;
 
-        chuva.innerHTML = `${objW.vento.toFixed(0)} %`; //Não tem info de chuva nos dados dessa API
-        humidade.innerHTML = `${objW.humidade} %`;
-        vento.innerHTML = `${objW.vento} km/h`;
-    
-        temp.innerHTML = `${+objW.temp.toFixed(0)} ºc`
-    
-        temp_max.innerHTML = `${+objW.temp_max.toFixed(0)} ºc`
-        temp_min.innerHTML = `${+objW.temp_min.toFixed(0)} ºc`
     }catch(err){
         //Se ok = false, avisa usuário.
         boxStats.classList.add("nothing_found");
