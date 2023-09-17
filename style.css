@@ -26,6 +26,18 @@ main{
   margin: 0 auto;
 }
 
+.noResults{
+  margin-top: 26px;
+  display: block;
+}
+.noResults.hide{
+  display: none;
+}
+
+.nothing_found{
+  display: none;
+}
+
 .header{
   width:100%
 }
@@ -44,7 +56,7 @@ main{
   margin-bottom: 33px;
 }
 
-.header div input{
+.header form input{
   width: 100%;
   display: inline-flex;
   text-align: center;
