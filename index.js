@@ -1,3 +1,5 @@
+import { apiKey } from "./apiKey.js";
+
 const searchInput = document.querySelector("[data-search='input']");
 const searchForm = document.querySelector("[data-search='form']");
 
@@ -39,7 +41,6 @@ function dataAtual(timestamp){
 
 async function weatherNow(cityName){
     try{
-        const apiKey = `&appid=49de26e129426202eb9780650042ef9a`
         const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric`
     
         const apiWeather = await fetch(apiUrl + `${apiKey}`);
