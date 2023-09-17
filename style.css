@@ -30,10 +30,9 @@ main{
   margin-top: 26px;
   display: block;
 }
-.noResults.hide{
+.hide{
   display: none;
 }
-
 .nothing_found{
   display: none;
 }
@@ -73,13 +72,32 @@ main{
   color: transparent
 }
 
+
+/*  */
+/*  */
+/*  */
 .box_bg{
   width: 100%;
   padding: 46px 32px;
   border-radius: 30px;
   margin-top: 49px;
   background: linear-gradient(41deg, #6CD8FA 13.8%, #5498FF 49.45%, #83CBFF 111.17%);
-  box-shadow: 0px 60px 43px -74px rgba(0, 0, 0, 0.25), 0px 4px 17px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 6px 33px -33px rgba(0, 0, 0, 0.6), 0px 3px 16px 0px rgba(0, 0, 0, 0.06);
+}
+
+.animationBox{
+  animation: .3s showDown;
+}
+
+@keyframes showDown{
+  from{
+    opacity: 0;
+    margin-top: -49px;
+  }
+  to{
+    margin-top: 49px;
+    opacity: 1;
+  }
 }
 
 
@@ -154,3 +172,6 @@ main{
   font-size: 19px;
 }
 .boxInside_bottomInfos .temperatura div span{ font-weight: normal; }
+
+
+

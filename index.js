@@ -26,7 +26,13 @@ async function weatherNow(cityName){
     
         const apiWeather = await fetch(apiUrl + `${apiKey}`);
         const apiJson = await apiWeather.json();
-        
+
+        //Animation remove/reset/add
+        boxStats.classList.remove("animationBox");
+        boxStats.offsetWidth;
+        boxStats.classList.add("animationBox");
+        // //
+
         boxStats.classList.remove("nothing_found");
         nothingFound.classList.add("hide");
 
