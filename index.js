@@ -17,6 +17,24 @@ const temp_max = document.querySelector("[data-stats='temperatura_Max']");
 const temp_min = document.querySelector("[data-stats='temperatura_Min']");
 
 
+function dataAtual(timestamp){
+    function _dia(){
+        const dia = new Date().getDay();
+        const diaExtenso = ["Domingo", "Segunda-Feira", "Terça-Feira", "Quarta-Feira", "Quinta-Feira", "Sexta-Feira", "Sábado"];
+        return diaExtenso[dia];
+    }
+    function _horario(){
+        const horario = new Date(timestamp * 1000);
+        const horas = horario.getHours();
+        // const minutos = ("0" + horario.getMinutes()).slice(-2); // Não retornar > atualiza em tempo real.
+
+        return `${horas}:00`;
+    }
+    return {
+        _dia,
+        _horario
+    }
+}
 
 
 async function weatherNow(cityName){
@@ -32,13 +50,14 @@ async function weatherNow(cityName){
         boxStats.offsetWidth;
         boxStats.classList.add("animationBox");
         // //
-
+        //Se ok = true, não mostra aviso.
         boxStats.classList.remove("nothing_found");
         nothingFound.classList.add("hide");
-
+        // //
         const objW = {
     
             cidade: apiJson.name,
+            data: apiJson.dt,
     
             temp: apiJson.main.temp,
             temp_max: apiJson.main.temp_max,
@@ -48,9 +67,15 @@ async function weatherNow(cityName){
             humidade: apiJson.main.humidity,
             vento: apiJson.wind.speed,
         }
-    
-        cidade.innerHTML = `${objW.cidade}`;
         
+        //Pegar dia e horario do Fetch.
+        const dataDay = dataAtual(objW.data)._dia();
+        const dataTime = dataAtual(objW.data)._horario();
+        // //
+
+        cidade.innerHTML = `${objW.cidade}`;
+        data.innerHTML = `${dataDay} às ${dataTime}`
+
         chuva.innerHTML = `${objW.vento.toFixed(0)} %`; //Não tem info de chuva nos dados dessa API
         humidade.innerHTML = `${objW.humidade} %`;
         vento.innerHTML = `${objW.vento} km/h`;
@@ -60,10 +85,15 @@ async function weatherNow(cityName){
         temp_max.innerHTML = `${+objW.temp_max.toFixed(0)} ºc`
         temp_min.innerHTML = `${+objW.temp_min.toFixed(0)} ºc`
     }catch(err){
+        //Se ok = false, avisa usuário.
         boxStats.classList.add("nothing_found");
         nothingFound.classList.remove("hide");
+        // //
+        console.log(Error(err))
     }
 }
+
+weatherNow("São Paulo");
 
 function searchCity(locationName){
     if(locationName.length > 2 && locationName.length <= 30){
