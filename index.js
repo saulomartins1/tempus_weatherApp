@@ -10,7 +10,7 @@ const nothingFound = document.querySelector(".noResults");
 function dataAtual(timestamp){
     function _dia(){
         const dia = new Date().getDay();
-        const diaExtenso = ["Domingo", "Segunda-Feira", "Terça-Feira", "Quarta-Feira", "Quinta-Feira", "Sexta-Feira", "Sábado"];
+        const diaExtenso = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"];
         return diaExtenso[dia];
     }
     function _horario(){
